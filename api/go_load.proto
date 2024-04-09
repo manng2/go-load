@@ -1,24 +1,26 @@
-syntax = "proto3":
+syntax = "proto3";
 
 package go_load;
 
+option go_package = "github.com/manng2/go-load";
+
 service GoLoadService {
-    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {}
-    rpc CreateSession(CreateSessionRequest) returns (CreateSessionResponse) {}
-    rpc CreateDownloadTask(CreateDownloadTaskRequest) returns (CreateDownloadTaskResponse) {}
-    rpc GetDownloadTaskList(GetDownloadTaskListRequest) returns (GetDownloadTaskListResponse) {}
-    rpc UpdateDownloadTask(UpdateDownloadTaskRequest) returns (UpdateDownloadTaskResponse) {}
-    rpc DeleteDownloadTask(DeleteDownloadTaskRequest) returns (DeleteDownloadTaskResponse) {}
-    rpc GetDownloadTaskFile(GetDownloadTaskFileRequest) return (stream GetDownloadTaskFileResponse) {}
+    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {};
+    rpc CreateSession(CreateSessionRequest) returns (CreateSessionResponse) {};
+    rpc CreateDownloadTask(CreateDownloadTaskRequest) returns (CreateDownloadTaskResponse) {};
+    rpc GetDownloadTaskList(GetDownloadTaskListRequest) returns (GetDownloadTaskListResponse) {};
+    rpc UpdateDownloadTask(UpdateDownloadTaskRequest) returns (UpdateDownloadTaskResponse) {};
+    rpc DeleteDownloadTask(DeleteDownloadTaskRequest) returns (DeleteDownloadTaskResponse) {};
+    rpc GetDownloadTaskFile(GetDownloadTaskFileRequest) returns (stream GetDownloadTaskFileResponse) {};
 }
 
 enum DownloadType {
-    Undefined = 0;
+    UndefinedType = 0;
     HTTP = 1;
 }
 
 enum DownloadStatus {
-    Undefined = 0;
+    UndefinedStatus = 0;
     Pending = 1;
     Downloading = 2;
     Failed = 3;
